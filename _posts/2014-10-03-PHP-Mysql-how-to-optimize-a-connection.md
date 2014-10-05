@@ -70,3 +70,7 @@ $result = $statement->fetchColumn();
 ?>
 {% endhighlight %}
 
+This simple configuration allows you to understand how the "singleton design pattern" works and at the same time using it in a concrete way. Implement the database connection in this way is an optimization with compared to instantiate a connection every time you need to run a query, how often do beginning programmers, because instantiating an object is a cost in terms of hardware and software resources.
+
+Not everyone agrees that this is the [best implementation possible](http://stackoverflow.com/a/9227695/2050321), however, is definitely a step forward. In a future post I will write about how to integrate the connection with the dependency injection design pattern.
+
