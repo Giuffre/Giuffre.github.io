@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PHP - MySql - How to optimize a connection with Singleton and PDO
-description: "Tiny tutorial about connection mysql php singleton"
+description: "In this article i'll show you about the implementation of a type of Design Pattern, the Singleton with PHP, MySql and PDO."
 modified: 2014-10-06
 tags: [code, php, mysql, design pattern, singleton]
 image:
