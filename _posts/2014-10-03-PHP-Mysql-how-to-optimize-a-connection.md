@@ -2,7 +2,7 @@
 layout: post
 title: PHP - MySql - How to optimize a connection with Singleton and PDO
 description: "Tiny tutorial about connection mysql php singleton"
-modified: 2014-10-05
+modified: 2014-10-06
 tags: [code, php, mysql, design pattern, singleton]
 image:
   feature: desktop.jpg
@@ -12,9 +12,11 @@ comments: true
 share: true  
 ---
 
-In this article i'll show you about the implementation of a type of Design Pattern, the [Singleton](http://en.wikipedia.org/wiki/Singleton_pattern). The Singleton Pattern requires that a class can instantiate most one object of self, in fact, in the implementation in PHP we have the constructor as private method and another method like `getInstance()` that will return an instance of this class.
+In this article i'll show you about the implementation of a type of Design Pattern, the [Singleton](http://en.wikipedia.org/wiki/Singleton_pattern). 
 
-The implementation of this pattern allows, in this case, to save valuable resources in memory during the execution of the script because is given the same instance `connection`. I use PDO in this example, below:
+The Singleton Pattern requires that a class can instantiate most one object of self, in fact, in the implementation in PHP we have the constructor as private method and we have another "getter" method like `getInstance()` that will return an instance of this class.
+
+The implementation of this pattern allows, in this case, to save valuable resources in memory during the execution of the script because is given the same instance `connection`. I use PDO driver in this example, below:
 
 {% highlight php %}
 <?php
@@ -37,7 +39,7 @@ class Connection {
         }
     }
 
-    public static function getConnection() {
+    public static function getInstance() {
         if (!self::$instance) {
             new Connection();
         }
@@ -48,5 +50,23 @@ class Connection {
 }
 
 ?> 
+{% endhighlight %}
+
+Consequently, it is possible to obtain an instance of the connection and run a query in the following way:
+
+{% highlight php %}
+<?php
+// some previous code...
+$connection = Connection::getInstance();
+$query = "SELECT * FROM user WHERE id = :user_id"
+
+$statement = $connection->prepare($query);
+$statement->bindValue('user_id', $user_id, \PDO::PARAM_INT);
+$statement->execute();
+
+$result = $statement->fetchColumn();
+
+// some next code...
+?>
 {% endhighlight %}
 
