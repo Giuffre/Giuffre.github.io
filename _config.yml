@@ -13,9 +13,9 @@ owner:
   bio:            "I'm a freelancer in the IT industry, exactly a software developer: I currently have the fucus on the backend systems. I am a specialist in Symfony and MySQL with the goal of becoming a \"full stack\" developer, if possible."
   email:          agiuffredi@gmail.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        https://twitter.com/agiuffredi     
-  github:         https://github.com/Giuffre
-  linkedin:       https://it.linkedin.com/in/agiuffredi/        
+  twitter:        agiuffredi     
+  github:         Giuffre
+  linkedin:       agiuffredi
   # For Google Authorship https://plus.google.com/authorship
   # google plus id, include the '+', eg +mmistakes
   # google_plus:    +yourid
@@ -32,10 +32,8 @@ bing_verify:
 # Links to include in top navigation
 # For external links add external: true
 links:
-  - title: Theme Setup
-    url: /theme-setup
-  - title: External Link
-    url: http://mademistakes.com
+  - title: Oilproject
+    url: http://www.oilproject.org
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
