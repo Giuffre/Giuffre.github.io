@@ -44,7 +44,7 @@ class Connection {
             new Connection();
         }
 
-        return self::$instance
+        return self::$instance;
     }
 
 }
