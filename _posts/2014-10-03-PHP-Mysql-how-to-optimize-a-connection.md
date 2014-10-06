@@ -58,7 +58,7 @@ Consequently, it is possible to obtain an instance of the connection and run a q
 <?php
 // some previous code...
 $connection = Connection::getInstance();
-$query = "SELECT * FROM user WHERE id = :user_id"
+$query = "SELECT * FROM user WHERE id = :user_id";
 
 $statement = $connection->prepare($query);
 $statement->bindValue('user_id', $user_id, \PDO::PARAM_INT);
