@@ -2,7 +2,7 @@
 layout: post
 title: PHP - MySql - How to optimize a connection with Singleton and PDO
 description: "In this article i'll show you about the implementation of a type of Design Pattern, the Singleton with PHP, MySql and PDO."
-modified: 2014-10-06
+modified: 2014-10-07
 tags: [code, php, mysql, design pattern, singleton]
 image:
   feature: desktop.jpg
@@ -14,7 +14,7 @@ share: true
 
 In this article i'll show you about the implementation of a type of Design Pattern, the [Singleton](http://en.wikipedia.org/wiki/Singleton_pattern). 
 
-The Singleton Pattern requires that a class can instantiate most one object of self, in fact, in the implementation in PHP we have the constructor as private method and we have another "getter" method like `getInstance()` that will return an instance of this class.
+The Singleton Pattern requires that a class can instantiate at most one object of self, in fact, in the implementation in PHP we have the constructor as private method and we have another "getter" method like `getInstance()` that will return an instance of this class.
 
 The implementation of this pattern allows, in this case, to save valuable resources in memory during the execution of the script because is given the same instance `connection`. I use PDO driver in this example, below:
 
